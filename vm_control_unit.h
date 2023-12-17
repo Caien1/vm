@@ -1,13 +1,13 @@
 #ifndef VM_CONTROL_UNIT_H
 #define VM_CONTROL_UNIT_H
-void fetch(){
-    
-}
-void decode(){
-    
-}
+#include "vm_cpu.h"
 
-void execute(){
 
+void fetch(REG16 *r16, REG12 *r12,uint16_t M[]){
+    r12->AR = r12->PC;
+    r16->IR = M[r12->AR];
+    r12->PC++;
 }
+    
+void decode(){}
 #endif // !VM_INSTRUCTION_SET_H
