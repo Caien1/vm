@@ -8,15 +8,15 @@ int main() {
   REG16 reg={0,0,0,0};
   REG12 reg12={0,0};
   IO io={0,0};
+  M[0]=0x7400;
 
   fetch(&reg,&reg12,M); // M is the memory
-  
-
-//uint16_t *ptr = createmem();
+ // fetch(&reg,&reg12,M); // M is the memory
+  //fetch(&reg,&reg12,M); // M is the memory
    
-// printf("AC: %x DR: %x IR: %x  TR: %x\n",reg.AC, reg.DR, reg.IR, reg.TR);
-// printf("AR: %x PC: %x\n",reg12.AR, reg12.PC);
-// printf("INPR: %x  OUT: %x\n",io.INPR, io.OUT);
+printf("AC: %x DR: %x IR: %x  TR: %x\n",reg.AC, reg.DR, reg.IR, reg.TR);
+printf("AR: %x PC: %x\n",reg12.AR, reg12.PC);
+printf("INPR: %x  OUT: %x\n",io.INPR, io.OUT);
 
  
 
