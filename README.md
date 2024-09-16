@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project is a basic implementation of a virtual machine (VM) that simulates CPU functionality. It includes a basic control unit, memory, and several CPU registers. The VM performs fetching, decoding, and basic operations such as clearing registers, complementing values, and handling specific instructions like HALT, SKIP, and INCREMENT. The instruction set includes both standard operations and register reference instructions (RRI).
+This project is a basic implementation of a virtual machine (VM) that simulates CPU functionality. It includes a basic control unit, memory, and several CPU registers. The VM performs fetching, decoding, and basic operations such as clearing registers, complementing values, and handling specific instructions like HALT, SKIP, and INCREMENT. The instruction set includes both standard operations and register reference instructions (RRI). This is based on Basic computer by Morris Mano from his book 'computer system architecture'
 
 ## Features
 
@@ -96,9 +96,4 @@ To compile and run the project, you need:
   - `stdio.h`
   - `unistd.h`
 
-### Compilation
 
-You can compile the project using GCC with the following command:
-
-```bash
-gcc -o vm main.c
