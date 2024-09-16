@@ -84,16 +84,4 @@ Contains helper functions for bitwise operations.
 - **Functions**:
   - `getBitValue(uint16_t num, int bitPosition)`: Returns the value (1 or 0) of the bit at the specified position in a 16-bit number.
 
-## Getting Started
-
-### Prerequisites
-
-To compile and run the project, you need:
-
-- A C compiler (e.g., GCC)
-- Make sure you include the standard libraries:
-  - `stdint.h`
-  - `stdio.h`
-  - `unistd.h`
-
-
+This project is still under development, but it has a modular design, use it as you like
