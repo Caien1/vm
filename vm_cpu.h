@@ -16,6 +16,7 @@ typedef struct REG{
     uint16_t AC; //16 bit Accumulator Register
     uint16_t IR; // 16 bit Instruction Register
     uint16_t TR; // 16 bit Temporary Register
+
 }REG16;
 
 
@@ -23,7 +24,9 @@ typedef struct IO{
     uint8_t INPR;
     uint8_t OUT;
 }IO;
-
+ 
+ typedef struct flags{
+    uint16_t E;} FLAGS;
 
 void print(){
     printf("Memory");

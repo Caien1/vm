@@ -1,6 +1,7 @@
 #ifndef VM_ISET_RRI_H
 #define VM_ISET_RRI_H
 #include <unistd.h>
+#include <./helpers/helpers.h>
 // Register Refrence instructions 
 #define CLA 0x7800  //clear ac ..
 #define CLE 0x7400 //clear E ..
@@ -15,41 +16,43 @@
 #define SZE 0x7002   //Skip instruction if E is zero
 #define HLT 0x7001 //HALT COMPUTER
 
+void exe_reg_ref(uint16_t *ac, uint16_t *e, uint16_t *pc){
+    switch (*ac)
+    {
+    case CLA:
+          *ac=0;
+        break;
+    case CLE:
+        *e=0;
+        break;
 
-int getBitValue(uint16_t num, int bitPosition) {
-    // Create a bitmask with only the specified bit set to 1
-    uint16_t bitmask = (uint16_t)(1U << bitPosition);
+    case CMA:
+        *ac=~(*ac);
+        break; 
 
-    // Use bitwise AND to check if the bit is set
-    uint16_t result = num & bitmask;
-
-    // Return 1 if the bit is set, 0 otherwise
-    return (result != 0);
+    case INC:
+        *ac++;
+        break;
+    case CME:
+        *e =~(*e);
+        break; 
+    case SPA:
+   int check = getBitValue(*ac, 15); 
+    if(check==0){
+        *pc++;
+break;
 }
-
-
-
-void clearAC(uint16_t*ac){
-    *ac=0;
-}
-
-
-void clearE(uint16_t*e){
- *e=0;
-}
-
-
-
-
-void complementAC(uint16_t*ac){
-    *ac=~(*ac);
-}
-
-
-void complementE(uint16_t *e){
-    *e =~(*e);
     
+    default:
+        break;
     }
+
+}
+
+
+
+
+
 
 
 void skipifpositive(uint16_t *ac, int *pc){

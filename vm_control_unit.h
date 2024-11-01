@@ -5,14 +5,14 @@
 
 
 void fetch(REG16 *r16, REG12 *r12,uint16_t M[]){
-    r12->AR = r12->PC;
-    r16->IR = M[r12->AR];
-    r12->PC++;
+	r12->AR = r12->PC;
+	r16->IR = M[r12->AR];
+	r12->PC++;
 }
 
 
-    
-void decode(REG16 *r16, REG12 *r12,uint16_t M[]){
+
+uint16_t decode_and_execute(REG16 *r16, REG12 *r12,uint16_t M[],FLAGS *f){
 
 	int I = getBitValue(r16->AC, 15);
 	unsigned short opcode=0;
@@ -22,7 +22,16 @@ void decode(REG16 *r16, REG12 *r12,uint16_t M[]){
 			opcode++;
 		}
 	}
- 
+
+	if (opcode==7){
+
+		if(I==0){
+			exe_regref(&r16->AC,&(f->E),&r12->PC);
+		}
+	}
+
+
+
 }
 
 

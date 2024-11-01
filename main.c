@@ -9,13 +9,16 @@ int main() {
   REG12 reg12={0,0};
   IO io={0,0};
   M[0]=0x7400;
+FLAGS f={0};
 
-  fetch(&reg,&reg12,M); // M is the memory
- // fetch(&reg,&reg12,M); // M is the memory
-  //fetch(&reg,&reg12,M); // M is the memory
-   
-printf("AC: %x DR: %x IR: %x  TR: %x\n",reg.AC, reg.DR, reg.IR, reg.TR);
-printf("AR: %x PC: %x\n",reg12.AR, reg12.PC);
+
+
+
+
+
+ prntf("AC: %x DR: %x IR: %x  TR: %x\n",reg.AC, reg.DR, reg.IR, reg.TR);
+
+printf("AR: %x PC: %x \n",reg12.AR, reg12.PC);
 printf("INPR: %x  OUT: %x\n",io.INPR, io.OUT);
 
  
